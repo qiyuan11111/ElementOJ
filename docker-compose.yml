@@ -1,0 +1,76 @@
+version: "3"
+services:
+  oj-redis:
+    image: redis:5.0.4
+    container_name: oj-redis
+    restart: always
+    tty: true
+    command: redis-server --requirepass acm1234@
+    volumes:
+      - ./sql/redis/data:/data
+      - ./sql/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+    ports: 
+      - "6379:6379"
+  
+  oj-mysql:
+    container_name: oj-mysql        # 指定容器的名称
+    restart: always
+    image: mysql:8.0                   # 指定镜像和版本
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ctguacm1234@
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sql/mysql/data:/var/lib/mysql         # 挂载数据目录
+      - ./sql/mysql/init:/docker-entrypoint-initdb.d/
+
+  oj-front-and-back:
+    image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj:1.1
+    container_name: oj-front-and-back
+    restart: always
+    tty: true
+    depends_on:
+      - oj-redis
+      - oj-mysql
+      - judge-server
+    volumes:
+      - ./testcase/in:/test_case/in
+      - ./testcase/user_out:/test_case/user_out
+      - ./testcase/out:/test_case/out
+      - ./testcase/sample:/test_case/sample
+      - ./web/backend:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
+      - ./so/comparator:/usr/lib/comparator         # 挂载代码目录
+      - ./html:/var/www/html
+    ports:
+      - "8080:8080"
+      - "80:80"
+
+  judge-server:
+    image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj_judgeserver:1.1
+    container_name: judge-server
+    tty: true
+    restart: always
+    cap_drop:
+      - SETPCAP
+      - MKNOD
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+      - SETFCAP
+      - FSETID
+    depends_on:
+      - oj-mysql
+    ports:
+      - "4399:8080"
+    volumes:
+      - ./testcase/in:/test_case/in
+      - ./testcase/user_out:/test_case/user_out
+      - ./judge/log:/log
+      - ./judge/run:/judger
+      - ./web/judgeserver:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
+      - ./so/judger:/usr/lib/judger         # 挂载代码目录
+    environment:
+      - TOKEN=CHANGE_THIS
