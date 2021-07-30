@@ -1,1 +1,1 @@
-# CTGUACMOnlineJudge
+# ElementOJ
