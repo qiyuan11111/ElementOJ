@@ -1,19 +1,19 @@
 version: "3"
 services:
-  oj-redis:
+  Element-redis:
     image: redis:5.0.4
-    container_name: oj-redis
+    container_name: Element-redis
     restart: always
     tty: true
     command: redis-server --requirepass acm1234@
     volumes:
       - ./sql/redis/data:/data
       - ./sql/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
-    ports: 
-      - "6379:6379"
+    # ports: 
+    #   - "6379:6379"
   
-  oj-mysql:
-    container_name: oj-mysql        # 指定容器的名称
+  Element-mysql:
+    container_name: Element-mysql        # 指定容器的名称
     restart: always
     image: mysql:8.0                   # 指定镜像和版本
     command:
@@ -28,9 +28,9 @@ services:
       - ./sql/mysql/data:/var/lib/mysql         # 挂载数据目录
       - ./sql/mysql/init:/docker-entrypoint-initdb.d/
 
-  oj-front-and-back:
+  Element-front-backend:
     image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj:1.1
-    container_name: oj-front-and-back
+    container_name: Element-front-backend
     restart: always
     tty: true
     depends_on:
@@ -43,15 +43,15 @@ services:
       - ./testcase/out:/test_case/out
       - ./testcase/sample:/test_case/sample
       - ./web/backend:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
-      - ./so/comparator:/usr/lib/comparator         # 挂载代码目录
-      - ./html:/var/www/html
-    ports:
-      - "8080:8080"
-      - "80:80"
+      - ./bin/comparator:/usr/lib/comparator         # 挂载代码目录
+      - ./src:/var/www/html
+    # ports:
+    #   - "8080:8080"
+    #   - "80:80"
 
-  judge-server:
+  Element-judgeserver:
     image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj_judgeserver:1.1
-    container_name: judge-server
+    container_name: Element-judgeserver
     tty: true
     restart: always
     cap_drop:
@@ -71,6 +71,6 @@ services:
       - ./judge/log:/log
       - ./judge/run:/judger
       - ./web/judgeserver:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
-      - ./so/judger:/usr/lib/judger         # 挂载代码目录
+      - ./bin/judger:/usr/lib/judger         # 挂载代码目录
     environment:
       - TOKEN=CHANGE_THIS
