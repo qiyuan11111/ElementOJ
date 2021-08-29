@@ -8,7 +8,7 @@ services:
     command: redis-server --requirepass acm1234@
     volumes:
       - ./sql/redis/data:/data
-      - ./sql/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+    #  - ./sql/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
     # ports: 
     #   - "6379:6379"
   
