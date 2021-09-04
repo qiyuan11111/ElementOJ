@@ -29,7 +29,7 @@ services:
       - ./sql/mysql/init:/docker-entrypoint-initdb.d/
 
   Element-front-backend:
-    image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj:1.1
+    image: registry.cn-qingdao.aliyuncs.com/elementoj/elementoj_front-backend:1.0
     container_name: Element-front-backend
     restart: always
     tty: true
@@ -50,7 +50,7 @@ services:
       - "80:80"
 
   Element-judgeserver:
-    image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj_judgeserver:1.1
+    image: registry.cn-qingdao.aliyuncs.com/elementoj/elementoj_judge-server:1.0
     container_name: Element-judgeserver
     tty: true
     restart: always
