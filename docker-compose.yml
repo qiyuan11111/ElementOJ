@@ -34,9 +34,9 @@ services:
     restart: always
     tty: true
     depends_on:
-      - oj-redis
-      - oj-mysql
-      - judge-server
+      - Element-redis
+      - Element-mysql
+      - Element-judgeserver
     volumes:
       - ./testcase/in:/test_case/in
       - ./testcase/user_out:/test_case/user_out
@@ -45,9 +45,9 @@ services:
       - ./web/backend:/usr/local/apache-tomcat-8.5.69/webapps         # 挂载代码目录
       - ./bin/comparator:/usr/lib/comparator         # 挂载代码目录
       - ./src:/var/www/html
-    # ports:
-    #   - "8080:8080"
-    #   - "80:80"
+    ports:
+      - "8080:8080"
+      - "80:80"
 
   Element-judgeserver:
     image: registry.cn-qingdao.aliyuncs.com/ctguacmoj/ctguacmoj_judgeserver:1.1
@@ -62,7 +62,7 @@ services:
       - SETFCAP
       - FSETID
     depends_on:
-      - oj-mysql
+      - Element-mysql
     ports:
       - "4399:8080"
     volumes:
