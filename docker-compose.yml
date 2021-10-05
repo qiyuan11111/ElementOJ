@@ -11,6 +11,18 @@ services:
     #  - ./sql/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
     # ports: 
     #   - "6379:6379"
+    
+  Element-mongodb:
+    image: mongo
+    container_name: Element-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ctguacm1234@
+    volumes:
+      - ./sql/mongodb/data:/data/db
   
   Element-mysql:
     container_name: Element-mysql        # 指定容器的名称
@@ -37,6 +49,7 @@ services:
       - Element-redis
       - Element-mysql
       - Element-judgeserver
+      - Element-mongodb
     volumes:
       - ./testcase/in:/test_case/in
       - ./testcase/user_out:/test_case/user_out
@@ -63,6 +76,7 @@ services:
       - FSETID
     depends_on:
       - Element-mysql
+      - Element-mongodb
     ports:
       - "4399:8080"
     volumes:
