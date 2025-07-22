@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elementoj.module.news.mapper.EleExpostulationMapper">
+
+    <resultMap type="com.elementoj.module.news.domain.EleExpostulation" id="EleExpostulationMap">
+        <id         property="expostulationId"   column="expostulation_id"/>
+        <result     property="expostulation"     column="expostulation"/>
+    </resultMap>
+
+    <!--    <select id="selectRandomExpostulation" resultMap="EleUserDetailsMap">-->
+    <!--        select expostulation-->
+    <!--        from (select user_name, password from user where user_name = #{user_name}) as a-->
+    <!--                 inner join (select authority from authority where user_name = "qiyuan") as b;-->
+    <!--    </select>-->
+
+</mapper>

@@ -1,0 +1,9 @@
+server:
+  port: 7802
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  jackson:
+    default-property-inclusion: non_null

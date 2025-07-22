@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: elementoj-module-test
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: localhost:8848
+        extension-configs:
+          - data-id: application-mysql.yml
+            group: DEFAULT_CONFIG
+            refresh: true

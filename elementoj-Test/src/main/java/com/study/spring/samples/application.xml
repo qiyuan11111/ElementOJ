@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="abean" class="com.study.spring.samples.ABean">
+        <constructor-arg type="String" value="abean01" />
+        <constructor-arg ref="cbean" />
+    </bean>
+
+    <bean id="cbean" class="com.study.spring.samples.CBean">
+        <constructor-arg type="String" value="cbean01" />
+    </bean>
+</beans>

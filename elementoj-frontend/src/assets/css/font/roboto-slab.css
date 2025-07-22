@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Roboto-slab';
+    font-style: bold;
+    src: url("@/assets/font/Roboto-Slab-Bold-2.ttf");
+}
+@font-face {
+    font-family: 'Roboto-slab';
+    font-style: normal;
+    src: url("@/assets/font/Roboto-Slab-Regular.ttf");
+}

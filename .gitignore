@@ -1,3 +1,11 @@
+/Redis-x64-5.0.14.1/
+/sentinel/
+/testcase/
+/nacos/
+/judge/
+/log/
+/arthas-output/
+/.idea/
 # Compiled class file
 *.class
 

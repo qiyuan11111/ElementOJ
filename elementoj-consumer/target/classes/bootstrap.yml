@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: elementoj-consumer
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: localhost:8848

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elementoj.auth.mapper.EleUserDetailsMapper">
+
+    <resultMap type="com.elementoj.auth.domain.EleUserDetails" id="EleUserDetailsMap">
+        <id         property="userId"       column="user_id"/>
+        <result     property="userName"     column="user_name"/>
+        <result     property="password"     column="password"/>
+        <collection property="authorities"  column="authority" resultMap="EleAuthorityMap" />
+    </resultMap>
+
+    <resultMap type="com.elementoj.auth.domain.EleAuthority" id="EleAuthorityMap">
+        <id     property="authority"    column="authority"/>
+    </resultMap>
+
+    <select id="selectUserDetailsByUserName" parameterType="String" resultMap="EleUserDetailsMap">
+        select *
+        from (select user_name, password, user_id from user where user_name = #{user_name}) as a
+                 inner join (select authority from authority where user_name = #{user_name}) as b;
+    </select>
+
+</mapper>
