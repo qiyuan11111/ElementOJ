@@ -23,7 +23,6 @@
         <module>elementoj-Test</module>
         <module>elementoj-gateway</module>
         <module>elementoj-module</module>
-        <module>elementoj-api/elementoj-api-judger</module>
     </modules>
     <properties>
         <java.version>8</java.version>

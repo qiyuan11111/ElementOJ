@@ -1,7 +1,0 @@
-server:
-  port: 8801
-spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848

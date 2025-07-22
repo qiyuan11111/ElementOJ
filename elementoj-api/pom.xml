@@ -15,6 +15,7 @@
         <module>elementoj-api-system</module>
         <module>elementoj-api-problem</module>
         <module>elementoj-api-solution</module>
+        <module>elementoj-api-judger</module>
     </modules>
 
     <properties>
