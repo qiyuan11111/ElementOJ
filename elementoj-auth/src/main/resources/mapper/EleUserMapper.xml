@@ -2,17 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.elementoj.auth.mapper.EleUserDetailsMapper">
+<mapper namespace="com.elementoj.auth.mapper.EleUserMapper">
 
-    <resultMap type="com.elementoj.auth.domain.EleUserDetails" id="EleUserDetailsMap">
+    <resultMap type="com.elementoj.api.system.domain.EleUser" id="EleUserMap">
         <id         property="userId"       column="user_id"/>
         <result     property="userName"     column="user_name"/>
-        <result     property="password"     column="password"/>
-        <collection property="authorities"  column="authority" resultMap="EleAuthorityMap" />
-    </resultMap>
-
-    <resultMap type="com.elementoj.auth.domain.EleAuthority" id="EleAuthorityMap">
-        <id     property="authority"    column="authority"/>
     </resultMap>
 
 <!--    <select id="selectUserDetailsByUserName" parameterType="String" resultMap="EleUserDetailsMap">-->
