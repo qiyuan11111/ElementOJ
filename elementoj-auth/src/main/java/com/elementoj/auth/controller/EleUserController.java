@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.AbstractMap;
+import java.util.stream.Stream;
+
 import static com.elementoj.api.system.exception.EleUserExceptionCode.*;
 
 @RestController
@@ -28,11 +31,11 @@ public class EleUserController {
     @Resource
     EleUserService eleUserService;
 
-    @Resource
-    TokenEndpoint tokenEndpoint;
-
-    @Resource
-    private PasswordEncoder encoder;
+//    @Resource
+//    TokenEndpoint tokenEndpoint;
+//
+//    @Resource
+//    private PasswordEncoder encoder;
 
     @Resource
     EleUserClient userClient;
@@ -51,14 +54,17 @@ public class EleUserController {
     @SentinelResource(value = "login", fallback = "loginFallback", fallbackClass = EleUserControllerFallback.class)
     public AjaxResult login(EleClient client,
                             HttpServletRequest request) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
-        map.add("username", client.getUserName());
-        map.add("password", client.getPassword());
-        map.add("grant_type", client.getGrantType());
-        map.add("client_id", client.getClientId());
-        map.add("client_secret", client.getClientSecret());
-        map.add("scope", client.getScope());
+        MultiValueMap<String, String> map = Stream.of(
+                        new AbstractMap.SimpleEntry<>("username", client.getUserName()),
+                        new AbstractMap.SimpleEntry<>("password", client.getPassword()),
+                        new AbstractMap.SimpleEntry<>("grant_type", client.getGrantType()),
+                        new AbstractMap.SimpleEntry<>("client_id", client.getClientId()),
+                        new AbstractMap.SimpleEntry<>("client_secret", client.getClientSecret()),
+                        new AbstractMap.SimpleEntry<>("scope", client.getScope())
+                )
+                .collect(LinkedMultiValueMap::new,
+                        (m, e) -> m.add(e.getKey(), e.getValue()),
+                        LinkedMultiValueMap::addAll);
 
         return AjaxResult.success(userClient.postAccessToken(map));
     }
@@ -66,9 +72,7 @@ public class EleUserController {
     @PostMapping("/info")
     public AjaxResult getUserInfoByAccessToken(@RequestParam("type")String type){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
-        Long userId = ((EleUserDetails) authentication.getPrincipal()).getUserId();
-        return AjaxResult.success(eleUserService.getUserByUserId(userId));
+        return AjaxResult.success(eleUserService.getUserByToken(authentication));
     }
 
     //    @PostMapping("/login")
