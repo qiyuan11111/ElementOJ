@@ -69,11 +69,11 @@ public class EleUserController {
 //        return AjaxResult.success(userClient.postAccessToken(map));
 //    }
 
-//    @PostMapping("/info")
-//    public AjaxResult getUserInfoByAccessToken(@RequestParam("type")String type){
+    @PostMapping("/info")
+    public AjaxResult getUserInfoByAccessToken(@RequestParam("type")String type){
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        return AjaxResult.success(eleUserService.getUserByToken(authentication));
-//    }
+        return AjaxResult.success("hello");
+    }
 
     //    @PostMapping("/login")
 //    @SentinelResource(value = "login", fallback = "loginFallback", fallbackClass = EleUserControllerFallback.class)
