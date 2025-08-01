@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elementoj.auth.mapper.EleUserMapper">
+
+    <resultMap type="com.elementoj.api.system.domain.EleUser" id="EleUserMap">
+        <id         property="userId"       column="user_id"/>
+        <result     property="userName"     column="user_name"/>
+    </resultMap>
+
+<!--    <select id="selectUserDetailsByUserName" parameterType="String" resultMap="EleUserDetailsMap">-->
+<!--        select *-->
+<!--        from (select user_name, password, user_id from user where user_name = #{user_name}) as a-->
+<!--                 inner join (select authority from authority where user_name = #{user_name}) as b;-->
+<!--    </select>-->
+    
+<!--    <insert id="initTest2" parameterType="">-->
+<!--        insert into test2-->
+<!--        <foreach collection=""-->
+<!--    </insert>-->
+
+</mapper>
