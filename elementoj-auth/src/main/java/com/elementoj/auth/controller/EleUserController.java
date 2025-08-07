@@ -9,35 +9,36 @@ import com.elementoj.auth.service.EleUserService;
 import com.elementoj.common.core.web.domain.AjaxResult;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.AbstractMap;
 import java.util.stream.Stream;
 
 import static com.elementoj.api.system.exception.EleUserExceptionCode.*;
 
-@RestController
+@Controller
 public class EleUserController {
 
     @Resource
     EleUserService eleUserService;
 
 //    @Resource
-//    TokenEndpoint tokenEndpoint;
+//    ProviderSettings  tokenEndpoint;
 //
 //    @Resource
 //    private PasswordEncoder encoder;
 
 //    @Resource
-//    EleUserClient userClient;
+//    EleUserClient userClient;15169772562
 
     @PostMapping("/register")
+    @ResponseBody
 //    @SentinelResource(value = "register", fallback = "registerFallback", fallbackClass = EleUserControllerFallback.class)
     public AjaxResult register(EleUser user, @RequestParam("repassword") String repassword) {
         if(ObjectUtil.isNull(user)){
@@ -48,6 +49,11 @@ public class EleUserController {
 
         eleUserService.register(user);
         return AjaxResult.success();
+    }
+
+    @GetMapping("/login-view")
+    public String login() {
+        return "login-view";  // 返回login.html视图
     }
 
 //    @PostMapping("/login")
@@ -69,7 +75,7 @@ public class EleUserController {
 //        return AjaxResult.success(userClient.postAccessToken(map));
 //    }
 
-    @PostMapping("/info")
+    @GetMapping("/info")
     public AjaxResult getUserInfoByAccessToken(@RequestParam("type")String type){
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return AjaxResult.success("hello");

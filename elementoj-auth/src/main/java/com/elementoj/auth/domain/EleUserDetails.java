@@ -23,7 +23,7 @@ public class EleUserDetails extends BaseEntity implements UserDetails {
     private String password;
 
     @TableField("user_id")
-    private Long userId;
+    private String userId;
 
     @TableField(exist = false)
     private List<EleAuthority> authorities;
@@ -41,27 +41,9 @@ public class EleUserDetails extends BaseEntity implements UserDetails {
         return password;
     }
 
+    @Override
     public String getUsername() {
         return userName;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }

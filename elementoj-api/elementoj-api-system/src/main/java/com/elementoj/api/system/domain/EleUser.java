@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @TableName(value = "user", autoResultMap = true)
 public class EleUser extends BaseEntity {
     @TableField("user_id")
-    private Long userId;
+    private String userId;
 
     @TableField("user_name")
     private String userName;

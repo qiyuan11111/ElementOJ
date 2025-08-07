@@ -12,8 +12,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
@@ -54,6 +58,7 @@ import java.util.UUID;
  * 5. 授权信息存储
  */
 @Configuration
+@EnableWebSecurity
 public class AuthorizationServerConfig {
 
     /**
@@ -73,13 +78,12 @@ public class AuthorizationServerConfig {
      */
 //    @Resource
 //    public UserDetailsService userDetailsService;
-
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-//
+
+    //
 //
     @Bean
     public OAuth2TokenCustomizer<JwtEncodingContext> userTokenEnhancer() {
@@ -96,7 +100,27 @@ public class AuthorizationServerConfig {
             // context.getClaims().claims(claims -> claims.putAll(additionalInfo));
         };
     }
-//
+
+    //
+    @Bean
+    @Order(Ordered.HIGHEST_PRECEDENCE + 1) // 较低优先级
+    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(authz -> authz
+                        .anyRequest().authenticated()
+                )
+                // 启用纯安全过滤器登录页（不经过MVC）
+                .formLogin(login -> login
+                                .loginPage("/login-view")   // 指定登录页面URL
+                        // 可以继续自定义其他选项，例如：
+                         .loginProcessingUrl("/login")
+                        // .defaultSuccessUrl("/home")
+                        // .failureUrl("/login?error=true")
+                );
+
+        return http.build();
+    }
+
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public SecurityFilterChain authorizationServerSecurityFilterChain(
@@ -114,13 +138,14 @@ public class AuthorizationServerConfig {
         // 配置HTTP安全策略
         http
                 .securityMatcher(endpointsMatcher)
-                .authorizeHttpRequests(authorize ->
-                        authorize.anyRequest().authenticated()
+                .authorizeHttpRequests(authorize -> authorize
+                        .anyRequest().authenticated()
                 )
                 .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
+                .formLogin(AbstractHttpConfigurer::disable) // 禁用所有表单登录处理
                 .exceptionHandling(exceptions ->
                         exceptions.authenticationEntryPoint(
-                                new LoginUrlAuthenticationEntryPoint("/login")
+                                new LoginUrlAuthenticationEntryPoint("/login-view")
                         )
                 )
                 .oauth2ResourceServer(oauth2 ->
@@ -133,7 +158,13 @@ public class AuthorizationServerConfig {
 
         return http.build();
     }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
 //
+
     /**
      * 配置 OAuth2 授权信息服务
      * <p>
@@ -200,34 +231,7 @@ public class AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository(
             JdbcTemplate jdbcTemplate) {
-        RegisteredClientRepository registeredClientRepository = new JdbcRegisteredClientRepository(jdbcTemplate);
-        // 创建基于JDBC的客户端仓库实例
-        // 当客户端尝试获取令牌时，系统会从数据库中查找该客户端的信息
-        // 包括验证客户端ID和密钥、检查授权类型是否允许等
-
-//        RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-//                .clientId("elementoj")
-//                .clientSecret(passwordEncoder().encode("elementoj"))
-//                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
-//                // 保留刷新令牌支持
-//                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-//                // 可选：保留客户端凭证模式
-//                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/elementoj")
-//                .redirectUri("http://127.0.0.1:8080/authorized")
-//                // 设置作用域
-//                .scope("all")  // 或者根据需要设置具体的作用域
-//                // 密码模式不需要用户确认授权，可以设置为false
-//                .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
-//                .tokenSettings(TokenSettings.builder()
-//                        .accessTokenTimeToLive(Duration.ofHours(1))
-//                        .refreshTokenTimeToLive(Duration.ofDays(30))
-//                        .build())
-//                .build();
-//        registeredClientRepository.save(registeredClient);
-        // 返回客户端仓库实例
-        return registeredClientRepository;
+        return new JdbcRegisteredClientRepository(jdbcTemplate);
     }
 
     /**

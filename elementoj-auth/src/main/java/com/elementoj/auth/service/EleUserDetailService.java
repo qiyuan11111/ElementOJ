@@ -2,22 +2,21 @@ package com.elementoj.auth.service;
 
 import com.elementoj.auth.mapper.EleUserDetailsMapper;
 import jakarta.annotation.Resource;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UserDetailsService;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-//  implements UserDetailsService
-public class EleUserDetailService {
+public class EleUserDetailService implements UserDetailsService {
     @Resource
     EleUserDetailsMapper eleUserDetailsMapper;
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        UserDetails userDetails = eleUserDetailsMapper.selectUserDetailsByUserName(username);
-//        if(userDetails == null) {
-//            throw new UsernameNotFoundException("用户名不存在");
-//        }
-//        return userDetails;
-//    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserDetails userDetails = eleUserDetailsMapper.selectUserDetailsByUserName(username);
+        if(userDetails == null) {
+            throw new UsernameNotFoundException("用户名不存在");
+        }
+        return userDetails;
+    }
 }
