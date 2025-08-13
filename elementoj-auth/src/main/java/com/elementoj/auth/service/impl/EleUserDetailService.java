@@ -1,6 +1,7 @@
-package com.elementoj.auth.service;
+package com.elementoj.auth.service.impl;
 
 import com.elementoj.auth.mapper.EleUserDetailsMapper;
+import com.elementoj.auth.service.IEleUserDetailService;
 import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EleUserDetailService implements UserDetailsService {
+public class EleUserDetailService implements UserDetailsService, IEleUserDetailService {
     @Resource
     EleUserDetailsMapper eleUserDetailsMapper;
     @Override

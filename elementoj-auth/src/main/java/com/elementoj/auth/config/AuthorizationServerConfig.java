@@ -106,17 +106,17 @@ public class AuthorizationServerConfig {
     @Order(Ordered.HIGHEST_PRECEDENCE + 1) // 较低优先级
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(authz -> authz
-                        .anyRequest().authenticated()
-                )
-                // 启用纯安全过滤器登录页（不经过MVC）
                 .formLogin(login -> login
                                 .loginPage("/login-view")   // 指定登录页面URL
-                        // 可以继续自定义其他选项，例如：
-                         .loginProcessingUrl("/login")
-                        // .defaultSuccessUrl("/home")
-                        // .failureUrl("/login?error=true")
+                                .loginProcessingUrl("/login")
+                                .permitAll()
+                )
+//                .formLogin(Customizer.withDefaults())
+                .authorizeHttpRequests(authz -> authz
+                        .anyRequest().authenticated()
                 );
+                // 启用纯安全过滤器登录页（不经过MVC）
+
 
         return http.build();
     }
@@ -134,12 +134,12 @@ public class AuthorizationServerConfig {
         // 这个匹配器会匹配所有OAuth2相关的端点，如/oauth2/token, /oauth2/authorize等
         RequestMatcher endpointsMatcher = authorizationServerConfigurer
                 .getEndpointsMatcher();
-
         // 配置HTTP安全策略
         http
                 .securityMatcher(endpointsMatcher)
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().authenticated()
+//                        .anyRequest().permitAll()
                 )
                 .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
                 .formLogin(AbstractHttpConfigurer::disable) // 禁用所有表单登录处理

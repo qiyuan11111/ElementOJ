@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统登录</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        /*.login-container:hover {*/
+        /*    transform: translateY(-5px);*/
+        /*}*/
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .login-header h1 {
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            color: #718096;
+            font-size: 16px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8fafc;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+            background: white;
+        }
+
+        .input-group input::placeholder {
+            color: #a0aec0;
+        }
+
+        .login-button {
+            width: 100%;
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+
+        .login-button:hover {
+            background: #3182ce;
+            transform: translateY(-2px);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+
+        .footer-links a {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: #a0aec0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .divider span {
+            padding: 0 16px;
+            font-size: 14px;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <div class="login-header">
+        <h1>欢迎回来</h1>
+        <p>请登录您的账号继续</p>
+    </div>
+
+    <form id="loginForm" th:action="@{/login}">
+
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="input-group">
+            <label for="username">用户名</label>
+            <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="请输入用户名"
+                    required
+                    autofocus>
+        </div>
+
+        <div class="input-group">
+            <label for="password">密码</label>
+            <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="请输入密码"
+                    required>
+        </div>
+
+        <button type="submit" class="login-button">登 录</button>
+
+        <div class="footer-links">
+            <a href="#">忘记密码?</a>
+            <a href="#">注册新账号</a>
+        </div>
+
+        <div class="divider">
+            <span>或使用社交账号登录</span>
+        </div>
+
+        <div class="social-login">
+            <div class="social-btn">
+                <svg width="20" height="20" fill="#4285F4" viewBox="0 0 24 24">
+                    <path d="M12.24 10.285V14.4h6.6c-.26 1.56-1.82 4.57-6.6 4.57-4 0-7.26-3.3-7.26-7.36s3.27-7.36 7.26-7.36c2.28 0 3.81.97 4.68 1.8l3.42-3.39c-2.18-2-5.1-3.2-8.1-3.2-6.77 0-12.24 5.5-12.24 12.28s5.47 12.28 12.24 12.28c7.05 0 11.76-4.96 11.76-11.93 0-.8-.09-1.4-.2-2.01H12.24z"/>
+                </svg>
+            </div>
+            <div class="social-btn">
+                <svg width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
+                    <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                </svg>
+            </div>
+            <div class="social-btn">
+                <svg width="20" height="20" fill="#1DA1F2" viewBox="0 0 24 24">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/>
+                </svg>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // document.getElementById('loginForm').addEventListener('submit', function(e) {
+    //     e.preventDefault();
+    //
+    //     const username = document.getElementById('username').value;
+    //     const password = document.getElementById('password').value;
+    //
+    //     // 这里添加实际的登录逻辑
+    //     console.log('登录尝试:', { username, password });
+    //
+    //     // 简单模拟登录成功
+    //     alert(`欢迎 ${username}! 登录成功 (此仅为前端演示)`);
+    // });
+</script>
+</body>
+</html>

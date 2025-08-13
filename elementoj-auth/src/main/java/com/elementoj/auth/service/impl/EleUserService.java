@@ -1,54 +1,57 @@
-package com.elementoj.auth.service;
+package com.elementoj.auth.service.impl;
 
 import cn.hutool.core.util.StrUtil;
+import com.elementoj.api.system.bo.EleUserBO;
 import com.elementoj.api.system.domain.EleUser;
 import com.elementoj.api.system.exception.EleUserException;
-import com.elementoj.auth.domain.EleUserDetails;
+import com.elementoj.api.system.mapbean.EleUserMapBean;
 import com.elementoj.auth.mapper.EleUserMapper;
+import com.elementoj.auth.service.IEleUserService;
 import com.elementoj.common.core.web.constant.UserConstants;
 //import com.elementoj.common.security.utils.SecurityUtils;
-import jakarta.annotation.Resource;
 //import org.springframework.security.core.Authentication;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static com.elementoj.api.system.exception.EleUserExceptionCode.*;
 
 @Service
-public class EleUserService {
+public class EleUserService implements IEleUserService {
 
     private final EleUserMapper eleUserMapper;
 
     private final PasswordEncoder passwordEncoder;
 
-    public EleUserService(EleUserMapper eleUserMapper, PasswordEncoder passwordEncoder) {
+    private final EleUserMapBean eleUserMapBean;
+
+    public EleUserService(EleUserMapper eleUserMapper, PasswordEncoder passwordEncoder, EleUserMapBean eleUserMapBean) {
         this.eleUserMapper = eleUserMapper;
         this.passwordEncoder = passwordEncoder;
+        this.eleUserMapBean = eleUserMapBean;
     }
 
-    public void register(EleUser user) {
+    @Override
+    public void register(EleUserBO eleUserBO) {
         Stream.<Supplier<EleUserException>>of(
-                        () -> StrUtil.isBlank(user.getUserName()) ?
+                        () -> StrUtil.isBlank(eleUserBO.getUserName()) ?
                                 new EleUserException("用户名不能为空", ELE_USER_NONE_USERNAME) : null,
 
-                        () -> StrUtil.isBlank(user.getPassword()) ?
+                        () -> StrUtil.isBlank(eleUserBO.getPassword()) ?
                                 new EleUserException("密码不能为空", ELE_USER_NONE_PASSWORD) : null,
 
                         () -> {
-                            int pwdLen = user.getPassword().length();
+                            int pwdLen = eleUserBO.getPassword().length();
                             return (pwdLen < UserConstants.MinPasswordLength || pwdLen > UserConstants.MaxPasswordLength) ?
                                     new EleUserException("密码长度必须在" + UserConstants.MinPasswordLength + "到" +
                                             UserConstants.MaxPasswordLength + "之间", ELE_USER_IRREGULAR_PASSWORD) : null;
                         },
 
                         () -> {
-                            int nameLen = user.getUserName().length();
+                            int nameLen = eleUserBO.getUserName().length();
                             return (nameLen < UserConstants.MinUserNameLength || nameLen > UserConstants.MaxUserNameLength) ?
                                     new EleUserException("用户名长度必须在" + UserConstants.MinUserNameLength + "到" +
                                             UserConstants.MaxUserNameLength + "之间", ELE_USER_IRREGULAR_USERNAME) : null;
@@ -61,13 +64,13 @@ public class EleUserService {
                     throw ex;
                 }); // 如果存在则抛出
 
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        eleUserBO.setPassword(passwordEncoder.encode(eleUserBO.getPassword()));
 
-        Long count = eleUserMapper.getUserCountByUserName(user.getUserName());
+        Long count = eleUserMapper.getUserCountByUserName(eleUserBO.getUserName());
         if (count > 0)
             throw new EleUserException("用户已存在", ELE_USER_MULTIPLE_USERS);
 
-        int result = eleUserMapper.registerUser(user);
+        int result = eleUserMapper.registerUser(eleUserMapBean.toEleUserDO(eleUserBO));
         if (result == 0)
             throw new EleUserException("注册失败", ELE_USER_REGISTER_FAILED);
     }
