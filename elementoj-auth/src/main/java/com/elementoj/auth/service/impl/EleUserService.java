@@ -2,9 +2,8 @@ package com.elementoj.auth.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.elementoj.api.system.bo.EleUserBO;
-import com.elementoj.api.system.domain.EleUser;
 import com.elementoj.api.system.exception.EleUserException;
-import com.elementoj.api.system.mapbean.EleUserMapBean;
+import com.elementoj.auth.mapbean.EleUserMapBean;
 import com.elementoj.auth.mapper.EleUserMapper;
 import com.elementoj.auth.service.IEleUserService;
 import com.elementoj.common.core.web.constant.UserConstants;

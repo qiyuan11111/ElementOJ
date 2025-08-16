@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("authority")
+@TableName(value = "authority", autoResultMap = true)
 public class EleAuthority extends BaseEntity implements GrantedAuthority {
 
     @TableField("authority")

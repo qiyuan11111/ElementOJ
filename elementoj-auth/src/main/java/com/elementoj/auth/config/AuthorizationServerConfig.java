@@ -111,8 +111,8 @@ public class AuthorizationServerConfig {
                                 .loginProcessingUrl("/login")
                                 .permitAll()
                 )
-//                .formLogin(Customizer.withDefaults())
                 .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/register", "/error").permitAll()
                         .anyRequest().authenticated()
                 );
                 // 启用纯安全过滤器登录页（不经过MVC）
@@ -139,7 +139,6 @@ public class AuthorizationServerConfig {
                 .securityMatcher(endpointsMatcher)
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().authenticated()
-//                        .anyRequest().permitAll()
                 )
                 .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
                 .formLogin(AbstractHttpConfigurer::disable) // 禁用所有表单登录处理

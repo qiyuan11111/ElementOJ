@@ -19,6 +19,7 @@
         <module>elementoj-auth</module>
         <module>elementoj-api</module>
         <module>elementoj-common</module>
+        <module>elementoj-module</module>
     </modules>
 
     <dependencyManagement>

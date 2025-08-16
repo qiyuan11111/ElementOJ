@@ -1,4 +1,4 @@
-package com.elementoj.api.system.domain;
+package com.elementoj.auth.domain;
 
 import com.elementoj.common.core.web.domain.BaseEntity;
 import lombok.Data;
@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class EleClient extends BaseEntity {
     private static final long serialVersionUID = 1L;
+
     public String grantType;
 
     public String userName;

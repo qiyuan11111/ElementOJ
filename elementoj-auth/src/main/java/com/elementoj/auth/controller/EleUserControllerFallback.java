@@ -1,7 +1,7 @@
 package com.elementoj.auth.controller;
 
-import com.elementoj.api.system.domain.EleClient;
-import com.elementoj.api.system.domain.EleUser;
+import com.elementoj.auth.domain.EleClient;
+import com.elementoj.auth.domain.EleUser;
 import com.elementoj.common.core.web.domain.AjaxResult;
 import com.elementoj.common.core.web.domain.EleException;
 

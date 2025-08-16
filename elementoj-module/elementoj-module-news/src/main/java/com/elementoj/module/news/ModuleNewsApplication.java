@@ -1,4 +1,4 @@
-package com.elementoj.auth;
+package com.elementoj.module.news;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.annotation.MapperScans;
@@ -10,10 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         @MapperScan("com.elementoj.**.mapbean")
 })
 @SpringBootApplication
-public class AuthApplication {
-
+public class ModuleNewsApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(ModuleNewsApplication.class, args);
     }
-
 }

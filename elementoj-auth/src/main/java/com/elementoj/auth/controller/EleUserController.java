@@ -4,11 +4,9 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.elementoj.api.system.dto.query.EleUserRegisterDTO;
 import com.elementoj.api.system.exception.EleUserException;
-import com.elementoj.api.system.mapbean.EleUserMapBean;
+import com.elementoj.auth.mapbean.EleUserMapBean;
 import com.elementoj.auth.service.impl.EleUserService;
 import com.elementoj.common.core.web.domain.AjaxResult;
-import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
