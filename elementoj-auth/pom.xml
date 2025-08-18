@@ -33,6 +33,12 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
         <!--        <dependency>-->
 <!--            <groupId>com.elementoj</groupId>-->
 <!--            <artifactId>elementoj-common-security</artifactId>-->
@@ -42,6 +48,12 @@
         <dependency>
             <groupId>com.elementoj</groupId>
             <artifactId>elementoj-common-nacos</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.elementoj</groupId>
+            <artifactId>elementoj-common-datasource</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

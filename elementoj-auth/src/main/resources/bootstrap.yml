@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: elementoj-auth
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        file-extension: yml
+        group: DEFAULT_GROUP
+        namespace: public
+  config:
+    import:
+      - optional:nacos:application-mysql.yml?group=DEFAULT_CONFIG
+      - optional:nacos:application-security.yml?group=DEFAULT_CONFIG

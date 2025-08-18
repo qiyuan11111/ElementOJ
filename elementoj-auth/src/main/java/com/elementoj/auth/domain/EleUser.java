@@ -15,6 +15,7 @@ import java.util.List;
 @Data
 @TableName(value = "user", autoResultMap = true)
 public class EleUser extends BaseEntity implements UserDetails {
+
     @TableField("user_id")
     private String userId;
 
@@ -51,10 +52,4 @@ public class EleUser extends BaseEntity implements UserDetails {
         return userName;
     }
 
-
-
-//    public EleUser(String userName, String password) {
-//        this.userName = userName;
-//        this.password = password;
-//    }
 }

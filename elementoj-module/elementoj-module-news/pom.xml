@@ -25,19 +25,26 @@
             <scope>compile</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.elementoj</groupId>-->
-<!--            <artifactId>elementoj-common-openfeign</artifactId>-->
-<!--            <version>0.0.1-RELEASE</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.elementoj</groupId>
+            <artifactId>elementoj-common-datasource</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.elementoj</groupId>-->
-<!--            <artifactId>elementoj-common-security</artifactId>-->
-<!--            <version>0.0.1-RELEASE</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.elementoj</groupId>-->
+        <!--            <artifactId>elementoj-common-openfeign</artifactId>-->
+        <!--            <version>0.0.1-RELEASE</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.elementoj</groupId>
+            <artifactId>elementoj-common-security</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.elementoj</groupId>
@@ -54,7 +61,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.elementoj.auth.AuthApplication</mainClass>
+                    <mainClass>com.elementoj.module.news.ModuleNewsApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>
