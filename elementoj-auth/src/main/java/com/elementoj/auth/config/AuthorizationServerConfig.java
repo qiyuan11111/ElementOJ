@@ -106,13 +106,14 @@ public class AuthorizationServerConfig {
     @Order(Ordered.HIGHEST_PRECEDENCE + 1) // 较低优先级
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(AbstractHttpConfigurer::disable)  // 在这里禁用CSRF
                 .formLogin(login -> login
                                 .loginPage("/login-view")   // 指定登录页面URL
                                 .loginProcessingUrl("/login")
                                 .permitAll()
                 )
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/register", "/error").permitAll()
+                        .requestMatchers("/register", "/error", "/login").permitAll()
                         .anyRequest().authenticated()
                 );
                 // 启用纯安全过滤器登录页（不经过MVC）
@@ -140,7 +141,8 @@ public class AuthorizationServerConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().authenticated()
                 )
-                .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
+//                .csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
+                .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable) // 禁用所有表单登录处理
                 .exceptionHandling(exceptions ->
                         exceptions.authenticationEntryPoint(

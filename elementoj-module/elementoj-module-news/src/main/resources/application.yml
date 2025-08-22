@@ -1,0 +1,29 @@
+server:
+  port: 8401
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+# application.yml
+  security:
+    oauth2:
+      client:
+        registration:
+          elementoj-auth:  # 客户端注册名称
+            client-id: web-client
+            client-secret: your-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: https://myapp.com/login/oauth2/code/elementoj
+            scope: openid,profile,email
+
+        provider:
+          elementoj:
+            issuer-uri: http://localhost:9000
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
