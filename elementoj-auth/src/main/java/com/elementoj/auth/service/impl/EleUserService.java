@@ -44,13 +44,13 @@ public class EleUserService implements UserDetailsService, IEleUserService {
         if (ObjectUtil.isNull(userDTO)){
             throw new UsernameNotFoundException("用户名不存在");
         }
-        return userDetails;
+        return eleUserMapBean.toEleUserBO(userDTO);
     }
 
     @Override
     public void register(EleUserBO eleUserBO) {
         Stream.<Supplier<EleUserException>>of(
-                        () -> StrUtil.isBlank(eleUserBO.getUserName()) ?
+                        () -> StrUtil.isBlank(eleUserBO.getUsername()) ?
                                 new EleUserException("用户名不能为空", ELE_USER_NONE_USERNAME) : null,
 
                         () -> StrUtil.isBlank(eleUserBO.getPassword()) ?
@@ -64,7 +64,7 @@ public class EleUserService implements UserDetailsService, IEleUserService {
                         },
 
                         () -> {
-                            int nameLen = eleUserBO.getUserName().length();
+                            int nameLen = eleUserBO.getUsername().length();
                             return (nameLen < UserConstants.MinUserNameLength || nameLen > UserConstants.MaxUserNameLength) ?
                                     new EleUserException("用户名长度必须在" + UserConstants.MinUserNameLength + "到" +
                                             UserConstants.MaxUserNameLength + "之间", ELE_USER_IRREGULAR_USERNAME) : null;
@@ -79,7 +79,7 @@ public class EleUserService implements UserDetailsService, IEleUserService {
 
         eleUserBO.setPassword(passwordEncoder.encode(eleUserBO.getPassword()));
 
-        Long count = eleUserMapper.getUserCountByUserName(eleUserBO.getUserName());
+        Long count = eleUserMapper.getUserCountByUserName(eleUserBO.getUsername());
         if (count > 0)
             throw new EleUserException("用户已存在", ELE_USER_MULTIPLE_USERS);
 
