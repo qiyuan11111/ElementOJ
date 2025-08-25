@@ -33,11 +33,11 @@ public class EleUser extends BaseEntity {
     @TableField("nick_name")
     private String nickName;
 
-    @TableField(exist = false)
-    private String email;
-
-    @TableField(exist = false)
-    private List<EleAuthority> authorities;
+//    @TableField(exist = false)
+//    private String email;
+//
+//    @TableField(exist = false)
+//    private List<EleAuthority> authorities;
 
 //    @Override
 //    public Collection<EleAuthority> getAuthorities() {

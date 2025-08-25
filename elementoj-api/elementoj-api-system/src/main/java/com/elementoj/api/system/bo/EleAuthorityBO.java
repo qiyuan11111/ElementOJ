@@ -1,0 +1,19 @@
+package com.elementoj.api.system.bo;
+
+import com.elementoj.common.core.web.domain.BaseEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.springframework.security.core.GrantedAuthority;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class EleAuthorityBO extends BaseEntity implements GrantedAuthority {
+
+    private String authorityId;
+
+    private String userId;
+
+    private String userName;
+
+    private String authority;
+}

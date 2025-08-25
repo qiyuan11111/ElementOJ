@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @TableName(value = "authority", autoResultMap = true)
-public class EleAuthority extends BaseEntity implements GrantedAuthority {
+public class EleAuthority extends BaseEntity{
 
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
@@ -28,9 +28,4 @@ public class EleAuthority extends BaseEntity implements GrantedAuthority {
 
     @TableField("authority")
     private String authority;
-
-    @Override
-    public String getAuthority() {
-        return authority;
-    }
 }

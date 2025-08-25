@@ -1,14 +1,19 @@
 package com.elementoj.auth.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.elementoj.api.system.bo.EleUserBO;
 import com.elementoj.api.system.exception.EleUserException;
+import com.elementoj.auth.domain.dto.EleUserDTO;
 import com.elementoj.auth.mapbean.EleUserMapBean;
 import com.elementoj.auth.mapper.EleUserMapper;
 import com.elementoj.auth.service.IEleUserService;
 import com.elementoj.common.core.web.constant.UserConstants;
 //import com.elementoj.common.security.utils.SecurityUtils;
 //import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +24,7 @@ import java.util.stream.Stream;
 import static com.elementoj.api.system.exception.EleUserExceptionCode.*;
 
 @Service
-public class EleUserService implements IEleUserService {
+public class EleUserService implements UserDetailsService, IEleUserService {
 
     private final EleUserMapper eleUserMapper;
 
@@ -31,6 +36,15 @@ public class EleUserService implements IEleUserService {
         this.eleUserMapper = eleUserMapper;
         this.passwordEncoder = passwordEncoder;
         this.eleUserMapBean = eleUserMapBean;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        EleUserDTO userDTO = eleUserMapper.selectUserDetailsByUserName(username);
+        if (ObjectUtil.isNull(userDTO)){
+            throw new UsernameNotFoundException("用户名不存在");
+        }
+        return userDetails;
     }
 
     @Override

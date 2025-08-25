@@ -57,7 +57,7 @@ public interface EleUserMapper extends MPJBaseMapper<EleUser> {
     default EleUserDTO selectUserDetailsByUserName(@Param("user_name") String userName) {
         return selectJoinOne(EleUserDTO.class, new MPJLambdaWrapper<>(EleUser.class).select(EleUser::getUserName, EleUser::getPassword, EleUser::getUserId)
                 .innerJoin(EleAuthority.class, on -> {
-                    
+                    on.eq(EleAuthority::getUserName, userName);
                 }, EleAuthority::getUserName, EleUser::getUserName));
     }
 
