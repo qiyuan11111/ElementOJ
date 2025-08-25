@@ -7,7 +7,7 @@ import com.elementoj.auth.domain.EleUser;
 import com.elementoj.auth.domain.dto.EleUserDTO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = EleAuthorityMapBean.class)
 public interface EleUserMapBean {
 
     EleUserBO toEleUserBO(EleUserRegisterDTO eleUserRegisterDTO);
