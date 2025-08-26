@@ -1,0 +1,1010 @@
+2025-08-26 17:41:44,509 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-08-26 17:41:44,586 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-08-26 17:41:44,719 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-08-26 17:41:44,723 INFO The number of active nodes increment to 1.
+
+2025-08-26 17:41:44,953 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:41:44,958 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-08-26 17:41:44,965 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:44,965 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> start vote and grant vote self, term=0.
+
+2025-08-26 17:41:44,984 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:41:44,987 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=17 ms
+
+2025-08-26 17:41:44,987 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> become leader of group, term=1, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:44,990 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-08-26 17:41:44,992 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:41:44,992 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:41:45,001 INFO onLeaderStart: term=1.
+
+2025-08-26 17:41:45,016 INFO The number of active nodes increment to 2.
+
+2025-08-26 17:41:45,080 INFO Creating new channel to: 10.0.16.26:7848.
+
+2025-08-26 17:41:45,087 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:41:45,087 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-08-26 17:41:45,088 INFO Node <naming_persistent_service/10.0.16.26:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,089 INFO Node <naming_persistent_service/10.0.16.26:7848> start vote and grant vote self, term=0.
+
+2025-08-26 17:41:45,090 INFO The channel 10.0.16.26:7848 is in state: CONNECTING.
+
+2025-08-26 17:41:45,092 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:41:45,092 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:41:45,092 INFO Node <naming_persistent_service/10.0.16.26:7848> become leader of group, term=1, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,094 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:41:45,094 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:41:45,095 INFO onLeaderStart: term=1.
+
+2025-08-26 17:41:45,120 INFO The number of active nodes increment to 3.
+
+2025-08-26 17:41:45,179 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:41:45,180 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-08-26 17:41:45,181 INFO Node <naming_instance_metadata/10.0.16.26:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,182 INFO Node <naming_instance_metadata/10.0.16.26:7848> start vote and grant vote self, term=0.
+
+2025-08-26 17:41:45,187 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:41:45,187 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=5 ms
+
+2025-08-26 17:41:45,187 INFO Node <naming_instance_metadata/10.0.16.26:7848> become leader of group, term=1, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,188 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:41:45,188 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:41:45,190 INFO onLeaderStart: term=1.
+
+2025-08-26 17:41:45,193 INFO The number of active nodes increment to 4.
+
+2025-08-26 17:41:45,282 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:41:45,282 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-08-26 17:41:45,283 INFO Node <naming_service_metadata/10.0.16.26:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,284 INFO Node <naming_service_metadata/10.0.16.26:7848> start vote and grant vote self, term=0.
+
+2025-08-26 17:41:45,289 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:41:45,289 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=5 ms
+
+2025-08-26 17:41:45,289 INFO Node <naming_service_metadata/10.0.16.26:7848> become leader of group, term=1, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,291 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:41:45,291 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:41:45,293 INFO onLeaderStart: term=1.
+
+2025-08-26 17:41:45,410 INFO The channel 10.0.16.26:7848 is in state: READY.
+
+2025-08-26 17:41:45,411 INFO The channel 10.0.16.26:7848 has successfully established.
+
+2025-08-26 17:41:45,695 INFO The number of active nodes increment to 5.
+
+2025-08-26 17:41:45,760 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:41:45,761 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot.
+
+2025-08-26 17:41:45,761 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,761 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> start vote and grant vote self, term=0.
+
+2025-08-26 17:41:45,764 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:41:45,764 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:41:45,764 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> become leader of group, term=1, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:41:45,765 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:41:45,765 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:41:45,767 INFO onLeaderStart: term=1.
+
+2025-08-26 17:41:45,956 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_LEADER.
+
+2025-08-26 17:41:45,959 INFO Fail to find the next candidate, group lock_acquire_service_v2.
+
+2025-08-26 17:41:45,959 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:41:45,963 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:41:45,964 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:41:45,964 INFO Shutting down FSMCaller...
+
+2025-08-26 17:41:45,965 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@4af44e42[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,965 INFO onShutdown.
+
+2025-08-26 17:41:45,966 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@4982b310[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,966 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,966 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,966 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,966 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,966 INFO The number of active nodes decrement to 4.
+
+2025-08-26 17:41:45,966 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_SHUTTING.
+
+2025-08-26 17:41:45,966 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:41:45,966 INFO Node <naming_service_metadata/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_LEADER.
+
+2025-08-26 17:41:45,966 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:41:45,966 INFO Fail to find the next candidate, group naming_service_metadata.
+
+2025-08-26 17:41:45,973 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:41:45,973 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=6 ms
+
+2025-08-26 17:41:45,973 INFO Shutting down FSMCaller...
+
+2025-08-26 17:41:45,973 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@2fc94125[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,974 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@a29aced[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,974 INFO onShutdown.
+
+2025-08-26 17:41:45,974 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,974 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,974 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,974 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,974 INFO Node <naming_service_metadata/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_SHUTTING.
+
+2025-08-26 17:41:45,974 INFO The number of active nodes decrement to 3.
+
+2025-08-26 17:41:45,974 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:41:45,974 INFO Node <naming_persistent_service/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_LEADER.
+
+2025-08-26 17:41:45,974 INFO Fail to find the next candidate, group naming_persistent_service.
+
+2025-08-26 17:41:45,974 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:41:45,978 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log.
+
+2025-08-26 17:41:45,979 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:41:45,979 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=6 ms
+
+2025-08-26 17:41:45,979 INFO Shutting down FSMCaller...
+
+2025-08-26 17:41:45,980 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@68076f57[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,980 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@4c6e0143[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,980 INFO onShutdown.
+
+2025-08-26 17:41:45,980 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,980 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,980 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,980 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,980 INFO Node <naming_persistent_service/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_SHUTTING.
+
+2025-08-26 17:41:45,980 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:41:45,980 INFO The number of active nodes decrement to 2.
+
+2025-08-26 17:41:45,980 INFO Node <naming_instance_metadata/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_LEADER.
+
+2025-08-26 17:41:45,980 INFO Fail to find the next candidate, group naming_instance_metadata.
+
+2025-08-26 17:41:45,980 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:41:45,985 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log.
+
+2025-08-26 17:41:45,986 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:41:45,986 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=6 ms
+
+2025-08-26 17:41:45,986 INFO Shutting down FSMCaller...
+
+2025-08-26 17:41:45,986 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@591e3e5e[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,987 INFO onShutdown.
+
+2025-08-26 17:41:45,987 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@a308ffd[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,987 INFO The number of active nodes decrement to 1.
+
+2025-08-26 17:41:45,987 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,987 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,987 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,987 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,987 INFO Node <naming_instance_metadata/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_SHUTTING.
+
+2025-08-26 17:41:45,987 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:41:45,987 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_LEADER.
+
+2025-08-26 17:41:45,987 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:41:45,987 INFO Fail to find the next candidate, group naming_persistent_service_v2.
+
+2025-08-26 17:41:45,990 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log.
+
+2025-08-26 17:41:45,992 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:41:45,992 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=1, votedFor=10.0.16.26:7848, cost time=5 ms
+
+2025-08-26 17:41:45,992 INFO Shutting down FSMCaller...
+
+2025-08-26 17:41:45,992 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@4c3663fc[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,992 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@64f248ea[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,992 INFO onShutdown.
+
+2025-08-26 17:41:45,992 INFO The number of active nodes decrement to 0.
+
+2025-08-26 17:41:45,994 INFO ThreadPool is terminated: JRaft-Global-ElectionTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@adfa2b2[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,994 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,995 INFO ThreadPool is terminated: JRaft-Global-VoteTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@68721ecc[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,995 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,995 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log.
+
+2025-08-26 17:41:45,995 INFO ThreadPool is terminated: JRaft-Global-StepDownTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@34305a01[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,995 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,995 INFO ThreadPool is terminated: JRaft-Global-SnapshotTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@7c80c93a[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:41:45,995 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:41:45,995 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> shutdown, currTerm=1 state=STATE_SHUTTING.
+
+2025-08-26 17:41:45,995 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:41:45,995 INFO Shutdown managed channel: 10.0.16.26:7848, ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=10, target=10.0.16.26:7848}}.
+
+2025-08-26 17:41:45,999 INFO The channel 10.0.16.26:7848 is in state: SHUTDOWN.
+
+2025-08-26 17:41:45,999 WARN This channel 10.0.16.26:7848 has started shutting down. Any new RPCs should fail immediately.
+
+2025-08-26 17:41:46,005 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log.
+
+2025-08-26 17:41:46,007 INFO Connection disconnected: /10.0.16.26:65414
+
+2025-08-26 17:41:46,010 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@2daf6417[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 10].
+
+2025-08-26 17:43:51,472 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-08-26 17:43:51,528 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-08-26 17:43:51,628 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-08-26 17:43:51,631 INFO The number of active nodes increment to 1.
+
+2025-08-26 17:43:51,834 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:43:51,838 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-08-26 17:43:51,838 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:43:51,843 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:51,845 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> start vote and grant vote self, term=1.
+
+2025-08-26 17:43:51,857 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:43:51,860 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=12 ms
+
+2025-08-26 17:43:51,860 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> become leader of group, term=2, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:51,861 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-08-26 17:43:51,864 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:43:51,864 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:43:51,870 INFO onLeaderStart: term=2.
+
+2025-08-26 17:43:51,878 INFO The number of active nodes increment to 2.
+
+2025-08-26 17:43:51,928 INFO Creating new channel to: 10.0.16.26:7848.
+
+2025-08-26 17:43:51,933 INFO The channel 10.0.16.26:7848 is in state: CONNECTING.
+
+2025-08-26 17:43:51,958 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:43:51,958 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-08-26 17:43:51,958 INFO Node <naming_persistent_service/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:43:51,959 INFO Node <naming_persistent_service/10.0.16.26:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:51,959 INFO Node <naming_persistent_service/10.0.16.26:7848> start vote and grant vote self, term=1.
+
+2025-08-26 17:43:51,962 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:43:51,962 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:43:51,962 INFO Node <naming_persistent_service/10.0.16.26:7848> become leader of group, term=2, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:51,962 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:43:51,962 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:43:51,964 INFO onLeaderStart: term=2.
+
+2025-08-26 17:43:51,979 INFO The number of active nodes increment to 3.
+
+2025-08-26 17:43:52,052 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:43:52,052 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-08-26 17:43:52,052 INFO Node <naming_instance_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:43:52,053 INFO Node <naming_instance_metadata/10.0.16.26:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,053 INFO Node <naming_instance_metadata/10.0.16.26:7848> start vote and grant vote self, term=1.
+
+2025-08-26 17:43:52,057 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:43:52,057 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:43:52,057 INFO Node <naming_instance_metadata/10.0.16.26:7848> become leader of group, term=2, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,057 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:43:52,057 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:43:52,058 INFO The channel 10.0.16.26:7848 is in state: READY.
+
+2025-08-26 17:43:52,059 INFO The channel 10.0.16.26:7848 has successfully established.
+
+2025-08-26 17:43:52,059 INFO onLeaderStart: term=2.
+
+2025-08-26 17:43:52,059 INFO The number of active nodes increment to 4.
+
+2025-08-26 17:43:52,131 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:43:52,131 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-08-26 17:43:52,131 INFO Node <naming_service_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:43:52,132 INFO Node <naming_service_metadata/10.0.16.26:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,132 INFO Node <naming_service_metadata/10.0.16.26:7848> start vote and grant vote self, term=1.
+
+2025-08-26 17:43:52,135 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:43:52,135 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:43:52,135 INFO Node <naming_service_metadata/10.0.16.26:7848> become leader of group, term=2, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,135 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:43:52,135 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:43:52,137 INFO onLeaderStart: term=2.
+
+2025-08-26 17:43:52,314 INFO The number of active nodes increment to 5.
+
+2025-08-26 17:43:52,387 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:43:52,387 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot.
+
+2025-08-26 17:43:52,387 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:43:52,388 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,388 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> start vote and grant vote self, term=1.
+
+2025-08-26 17:43:52,391 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:43:52,391 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:43:52,391 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> become leader of group, term=2, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:43:52,391 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:43:52,391 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:43:52,393 INFO onLeaderStart: term=2.
+
+2025-08-26 17:43:52,531 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_LEADER.
+
+2025-08-26 17:43:52,532 INFO Fail to find the next candidate, group lock_acquire_service_v2.
+
+2025-08-26 17:43:52,532 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:43:52,536 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:43:52,536 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:43:52,536 INFO Shutting down FSMCaller...
+
+2025-08-26 17:43:52,536 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@76300346[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,537 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@64a2966a[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,537 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,537 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,537 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,537 INFO onShutdown.
+
+2025-08-26 17:43:52,537 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<lock_acquire_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,537 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_SHUTTING.
+
+2025-08-26 17:43:52,537 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:43:52,537 INFO The number of active nodes decrement to 4.
+
+2025-08-26 17:43:52,537 INFO Node <naming_service_metadata/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_LEADER.
+
+2025-08-26 17:43:52,537 INFO Fail to find the next candidate, group naming_service_metadata.
+
+2025-08-26 17:43:52,537 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:43:52,541 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:43:52,541 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:43:52,541 INFO Shutting down FSMCaller...
+
+2025-08-26 17:43:52,541 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@c04a1ca[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,541 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@4cb3e76c[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,541 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,541 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,541 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,541 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_service_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,541 INFO onShutdown.
+
+2025-08-26 17:43:52,541 INFO Node <naming_service_metadata/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_SHUTTING.
+
+2025-08-26 17:43:52,543 INFO The number of active nodes decrement to 3.
+
+2025-08-26 17:43:52,543 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:43:52,543 INFO Node <naming_persistent_service/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_LEADER.
+
+2025-08-26 17:43:52,543 INFO Fail to find the next candidate, group naming_persistent_service.
+
+2025-08-26 17:43:52,543 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:43:52,547 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log.
+
+2025-08-26 17:43:52,549 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:43:52,549 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=5 ms
+
+2025-08-26 17:43:52,549 INFO Shutting down FSMCaller...
+
+2025-08-26 17:43:52,549 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@6845dfcc[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,549 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@5415ed48[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,549 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,549 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,549 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,549 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_persistent_service/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,549 INFO onShutdown.
+
+2025-08-26 17:43:52,549 INFO Node <naming_persistent_service/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_SHUTTING.
+
+2025-08-26 17:43:52,549 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:43:52,549 INFO The number of active nodes decrement to 2.
+
+2025-08-26 17:43:52,549 INFO Node <naming_instance_metadata/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_LEADER.
+
+2025-08-26 17:43:52,549 INFO Fail to find the next candidate, group naming_instance_metadata.
+
+2025-08-26 17:43:52,549 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:43:52,550 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log.
+
+2025-08-26 17:43:52,554 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:43:52,554 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:43:52,554 INFO Shutting down FSMCaller...
+
+2025-08-26 17:43:52,554 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@3e7e4aea[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,554 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@78835956[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,554 INFO onShutdown.
+
+2025-08-26 17:43:52,554 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,554 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,554 INFO The number of active nodes decrement to 1.
+
+2025-08-26 17:43:52,554 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,554 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_instance_metadata/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,554 INFO Node <naming_instance_metadata/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_SHUTTING.
+
+2025-08-26 17:43:52,554 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:43:52,554 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_LEADER.
+
+2025-08-26 17:43:52,554 INFO Fail to find the next candidate, group naming_persistent_service_v2.
+
+2025-08-26 17:43:52,554 INFO onLeaderStop: status=Status[ESHUTDOWN<1007>: Raft node is going to quit.].
+
+2025-08-26 17:43:52,555 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log.
+
+2025-08-26 17:43:52,559 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:43:52,559 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=2, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:43:52,559 INFO Shutting down FSMCaller...
+
+2025-08-26 17:43:52,559 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@5c00b341[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,559 INFO ThreadPool is terminated: JRaft-Node-ScheduleThreadPool, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@10658b31[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,559 INFO onShutdown.
+
+2025-08-26 17:43:52,559 INFO The number of active nodes decrement to 0.
+
+2025-08-26 17:43:52,560 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log.
+
+2025-08-26 17:43:52,560 INFO ThreadPool is terminated: JRaft-Global-ElectionTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@47f64159[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,560 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-ElectionTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,560 INFO ThreadPool is terminated: JRaft-Global-VoteTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@b2121da[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,560 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=5000, name='JRaft-VoteTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,560 INFO ThreadPool is terminated: JRaft-Global-StepDownTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@2685d63a[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,560 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=2500, name='JRaft-StepDownTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,561 INFO ThreadPool is terminated: JRaft-Global-SnapshotTimer, com.alipay.sofa.jraft.util.MetricScheduledThreadPoolExecutor@66155ef4[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0].
+
+2025-08-26 17:43:52,561 INFO Destroy timer: RepeatedTimer{timeout=null, stopped=true, running=false, destroyed=true, invoking=false, timeoutMs=1800000, name='JRaft-SnapshotTimer-<naming_persistent_service_v2/10.0.16.26:7848>'}.
+
+2025-08-26 17:43:52,561 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> shutdown, currTerm=2 state=STATE_SHUTTING.
+
+2025-08-26 17:43:52,561 INFO Stop the RaftGroupService successfully.
+
+2025-08-26 17:43:52,561 INFO Shutdown managed channel: 10.0.16.26:7848, ManagedChannelOrphanWrapper{delegate=ManagedChannelImpl{logId=10, target=10.0.16.26:7848}}.
+
+2025-08-26 17:43:52,562 INFO The channel 10.0.16.26:7848 is in state: SHUTDOWN.
+
+2025-08-26 17:43:52,562 WARN This channel 10.0.16.26:7848 has started shutting down. Any new RPCs should fail immediately.
+
+2025-08-26 17:43:52,564 INFO Connection disconnected: /10.0.16.26:52977
+
+2025-08-26 17:43:52,566 INFO ThreadPool is terminated: JRaft-RPC-Processor, com.alipay.sofa.jraft.util.MetricThreadPoolExecutor@38c30617[Shutting down, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 10].
+
+2025-08-26 17:43:52,567 INFO DB destroyed, the db path is: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log.
+
+2025-08-26 17:45:00,507 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-08-26 17:45:00,554 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-08-26 17:45:00,653 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-08-26 17:45:00,655 INFO The number of active nodes increment to 1.
+
+2025-08-26 17:45:00,841 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:00,844 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:00,846 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-08-26 17:45:00,847 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:00,851 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:00,852 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> start vote and grant vote self, term=2.
+
+2025-08-26 17:45:00,865 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:45:00,865 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=3, votedFor=10.0.16.26:7848, cost time=12 ms
+
+2025-08-26 17:45:00,867 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> become leader of group, term=3, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:00,868 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-08-26 17:45:00,869 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:00,869 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:00,879 INFO onLeaderStart: term=3.
+
+2025-08-26 17:45:00,885 INFO The number of active nodes increment to 2.
+
+2025-08-26 17:45:00,930 INFO Creating new channel to: 10.0.16.26:7848.
+
+2025-08-26 17:45:00,935 INFO The channel 10.0.16.26:7848 is in state: CONNECTING.
+
+2025-08-26 17:45:00,963 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:00,964 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:00,964 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-08-26 17:45:00,964 INFO Node <naming_persistent_service/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:00,965 INFO Node <naming_persistent_service/10.0.16.26:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:00,965 INFO Node <naming_persistent_service/10.0.16.26:7848> start vote and grant vote self, term=2.
+
+2025-08-26 17:45:00,968 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:45:00,968 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=3, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:45:00,968 INFO Node <naming_persistent_service/10.0.16.26:7848> become leader of group, term=3, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:00,969 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:00,969 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:00,971 INFO onLeaderStart: term=3.
+
+2025-08-26 17:45:00,987 INFO The number of active nodes increment to 3.
+
+2025-08-26 17:45:01,065 INFO The channel 10.0.16.26:7848 is in state: READY.
+
+2025-08-26 17:45:01,065 INFO The channel 10.0.16.26:7848 has successfully established.
+
+2025-08-26 17:45:01,073 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:01,073 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:01,074 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-08-26 17:45:01,074 INFO Node <naming_instance_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:01,074 INFO Node <naming_instance_metadata/10.0.16.26:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,074 INFO Node <naming_instance_metadata/10.0.16.26:7848> start vote and grant vote self, term=2.
+
+2025-08-26 17:45:01,078 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:45:01,078 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=3, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:45:01,078 INFO Node <naming_instance_metadata/10.0.16.26:7848> become leader of group, term=3, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,078 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:01,078 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:01,080 INFO onLeaderStart: term=3.
+
+2025-08-26 17:45:01,081 INFO The number of active nodes increment to 4.
+
+2025-08-26 17:45:01,152 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:01,152 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:01,153 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-08-26 17:45:01,153 INFO Node <naming_service_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:01,153 INFO Node <naming_service_metadata/10.0.16.26:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,153 INFO Node <naming_service_metadata/10.0.16.26:7848> start vote and grant vote self, term=2.
+
+2025-08-26 17:45:01,157 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:45:01,157 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=3, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:45:01,157 INFO Node <naming_service_metadata/10.0.16.26:7848> become leader of group, term=3, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,157 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:01,157 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:01,159 INFO onLeaderStart: term=3.
+
+2025-08-26 17:45:01,351 INFO The number of active nodes increment to 5.
+
+2025-08-26 17:45:01,438 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:01,439 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:01,439 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot.
+
+2025-08-26 17:45:01,439 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:01,440 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,440 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> start vote and grant vote self, term=2.
+
+2025-08-26 17:45:01,445 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:45:01,446 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=3, votedFor=10.0.16.26:7848, cost time=5 ms
+
+2025-08-26 17:45:01,446 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> become leader of group, term=3, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:01,447 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:01,447 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:01,449 INFO onLeaderStart: term=3.
+
+2025-08-26 17:45:08,631 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2025-08-26 17:45:08,685 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2025-08-26 17:45:08,784 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2025-08-26 17:45:08,787 INFO The number of active nodes increment to 1.
+
+2025-08-26 17:45:08,980 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:08,986 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:08,990 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2025-08-26 17:45:08,990 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:08,995 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> init, term=3, lastLogId=LogId [index=3, term=3], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:08,995 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> start vote and grant vote self, term=3.
+
+2025-08-26 17:45:09,008 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2025-08-26 17:45:09,008 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=4, votedFor=10.0.16.26:7848, cost time=11 ms
+
+2025-08-26 17:45:09,008 INFO Node <naming_persistent_service_v2/10.0.16.26:7848> become leader of group, term=4, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,009 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2025-08-26 17:45:09,010 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:09,010 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:09,016 INFO onLeaderStart: term=4.
+
+2025-08-26 17:45:09,025 INFO The number of active nodes increment to 2.
+
+2025-08-26 17:45:09,073 INFO Creating new channel to: 10.0.16.26:7848.
+
+2025-08-26 17:45:09,078 INFO The channel 10.0.16.26:7848 is in state: CONNECTING.
+
+2025-08-26 17:45:09,117 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:09,119 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:09,119 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot.
+
+2025-08-26 17:45:09,119 INFO Node <naming_persistent_service/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:09,120 INFO Node <naming_persistent_service/10.0.16.26:7848> init, term=3, lastLogId=LogId [index=3, term=3], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,120 INFO Node <naming_persistent_service/10.0.16.26:7848> start vote and grant vote self, term=3.
+
+2025-08-26 17:45:09,124 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data on windows.
+
+2025-08-26 17:45:09,124 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\meta-data, term=4, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:45:09,124 INFO Node <naming_persistent_service/10.0.16.26:7848> become leader of group, term=4, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,125 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:09,125 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:09,126 INFO onLeaderStart: term=4.
+
+2025-08-26 17:45:09,146 INFO The number of active nodes increment to 3.
+
+2025-08-26 17:45:09,231 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:09,233 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:09,234 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2025-08-26 17:45:09,234 INFO Node <naming_instance_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:09,234 INFO The channel 10.0.16.26:7848 is in state: READY.
+
+2025-08-26 17:45:09,234 INFO The channel 10.0.16.26:7848 has successfully established.
+
+2025-08-26 17:45:09,235 INFO Node <naming_instance_metadata/10.0.16.26:7848> init, term=3, lastLogId=LogId [index=3, term=3], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,235 INFO Node <naming_instance_metadata/10.0.16.26:7848> start vote and grant vote self, term=3.
+
+2025-08-26 17:45:09,239 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2025-08-26 17:45:09,239 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=4, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:45:09,239 INFO Node <naming_instance_metadata/10.0.16.26:7848> become leader of group, term=4, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,239 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:09,239 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:09,241 INFO onLeaderStart: term=4.
+
+2025-08-26 17:45:09,242 INFO The number of active nodes increment to 4.
+
+2025-08-26 17:45:09,322 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:09,323 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:09,323 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2025-08-26 17:45:09,323 INFO Node <naming_service_metadata/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:09,327 INFO Node <naming_service_metadata/10.0.16.26:7848> init, term=3, lastLogId=LogId [index=3, term=3], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,328 INFO Node <naming_service_metadata/10.0.16.26:7848> start vote and grant vote self, term=3.
+
+2025-08-26 17:45:09,331 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2025-08-26 17:45:09,331 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=4, votedFor=10.0.16.26:7848, cost time=3 ms
+
+2025-08-26 17:45:09,331 INFO Node <naming_service_metadata/10.0.16.26:7848> become leader of group, term=4, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,334 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:09,334 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:09,336 INFO onLeaderStart: term=4.
+
+2025-08-26 17:45:09,497 INFO The number of active nodes increment to 5.
+
+2025-08-26 17:45:09,551 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 0 to 1, cost 0 ms.
+
+2025-08-26 17:45:09,552 INFO Starts FSMCaller successfully.
+
+2025-08-26 17:45:09,552 WARN No data for snapshot reader D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot.
+
+2025-08-26 17:45:09,552 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> target priority value has changed from: 0, to: -1.
+
+2025-08-26 17:45:09,553 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> init, term=3, lastLogId=LogId [index=3, term=3], conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,553 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> start vote and grant vote self, term=3.
+
+2025-08-26 17:45:09,556 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data on windows.
+
+2025-08-26 17:45:09,557 INFO Save raft meta, path=D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\meta-data, term=4, votedFor=10.0.16.26:7848, cost time=4 ms
+
+2025-08-26 17:45:09,557 INFO Node <lock_acquire_service_v2/10.0.16.26:7848> become leader of group, term=4, conf=10.0.16.26:7848, oldConf=.
+
+2025-08-26 17:45:09,557 WARN RPC server is not started in RaftGroupService.
+
+2025-08-26 17:45:09,557 INFO Start the RaftGroupService successfully.
+
+2025-08-26 17:45:09,559 INFO onLeaderStart: term=4.
+
+2025-08-26 18:05:41,020 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp on windows.
+
+2025-08-26 18:05:41,020 INFO Deleting snapshot D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_4.
+
+2025-08-26 18:05:41,020 INFO Renaming D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp to D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_4.
+
+2025-08-26 18:05:41,021 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\snapshot on windows.
+
+2025-08-26 18:06:29,834 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp on windows.
+
+2025-08-26 18:06:29,834 INFO Deleting snapshot D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_4.
+
+2025-08-26 18:06:29,835 INFO Renaming D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp to D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_4.
+
+2025-08-26 18:06:29,835 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot on windows.
+
+2025-08-26 18:08:01,533 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp on windows.
+
+2025-08-26 18:08:01,533 INFO Deleting snapshot D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_4.
+
+2025-08-26 18:08:01,533 INFO Renaming D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp to D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_4.
+
+2025-08-26 18:08:01,533 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\snapshot on windows.
+
+2025-08-26 18:08:43,641 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot\temp on windows.
+
+2025-08-26 18:08:43,641 INFO Deleting snapshot D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot\snapshot_4.
+
+2025-08-26 18:08:43,641 INFO Renaming D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot\temp to D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot\snapshot_4.
+
+2025-08-26 18:08:43,641 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\snapshot on windows.
+
+2025-08-26 18:08:51,428 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot\temp on windows.
+
+2025-08-26 18:08:51,428 INFO Deleting snapshot D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot\snapshot_4.
+
+2025-08-26 18:08:51,428 INFO Renaming D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot\temp to D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot\snapshot_4.
+
+2025-08-26 18:08:51,428 WARN Unable to fsync directory D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\snapshot on windows.
+
+2025-08-26 18:35:41,049 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 1 to 5, cost 1 ms.
+
+2025-08-26 18:36:29,880 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 1 to 5, cost 0 ms.
+
+2025-08-26 18:38:01,578 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 1 to 5, cost 0 ms.
+
+2025-08-26 18:38:43,672 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 1 to 5, cost 1 ms.
+
+2025-08-26 18:38:51,471 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 1 to 5, cost 1 ms.
+
+2025-08-26 19:05:41,101 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:06:29,945 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:08:01,643 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:08:43,729 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:08:51,532 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:35:41,156 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 5 to 5, cost 1 ms.
+
+2025-08-26 19:36:30,001 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:38:01,694 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:38:43,804 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 19:38:51,592 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 20:05:41,204 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_instance_metadata\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 20:06:30,054 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 20:08:01,744 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_service_metadata\log from log index 5 to 5, cost 0 ms.
+
+2025-08-26 20:08:43,851 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\naming_persistent_service\log from log index 5 to 5, cost 1 ms.
+
+2025-08-26 20:08:51,648 INFO Truncated prefix logs in data path: D:\zhengyiming14\Documents\idea\ElementOJ\nacos-server-3.0.3\nacos\data\protocol\raft\lock_acquire_service_v2\log from log index 5 to 5, cost 1 ms.
+
