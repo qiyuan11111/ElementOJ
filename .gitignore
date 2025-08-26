@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/nacos-server-3.0.3/*
+nacos-server-3.0.3/
