@@ -11,5 +11,3 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.security: TRACE
     org.springframework.security.oauth2: TRACE
-    
-    
