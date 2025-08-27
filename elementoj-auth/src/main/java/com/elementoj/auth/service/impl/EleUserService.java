@@ -2,6 +2,8 @@ package com.elementoj.auth.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import com.elementoj.api.system.bo.EleUserBO;
 import com.elementoj.api.system.exception.EleUserException;
 import com.elementoj.auth.domain.dto.EleUserDTO;
@@ -41,6 +43,7 @@ public class EleUserService implements UserDetailsService, IEleUserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         EleUserDTO userDTO = eleUserMapper.selectUserDetailsByUserName(username);
+        System.out.println(JSONUtil.toJsonStr(userDTO));
         if (ObjectUtil.isNull(userDTO)){
             throw new UsernameNotFoundException("用户名不存在");
         }

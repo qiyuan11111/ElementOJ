@@ -51,10 +51,16 @@ public interface EleUserMapper extends MPJBaseMapper<EleUser> {
 //            """})
 //    EleUser selectUserDetailsByUserName(@Param("user_name") String userName);
     default EleUserDTO selectUserDetailsByUserName(@Param("user_name") String userName) {
-        return selectJoinOne(EleUserDTO.class, new MPJLambdaWrapper<>(EleUser.class).select(EleUser::getUsername, EleUser::getPassword, EleUser::getUserId)
-                .innerJoin(EleAuthority.class, on -> {
-                    on.eq(EleAuthority::getUsername, userName);
-                }, EleAuthority::getUsername, EleUser::getUsername));
+        return selectJoinOne(EleUserDTO.class, new MPJLambdaWrapper<>(EleUser.class)
+                .select(EleUser::getUsername, EleUser::getPassword, EleUser::getUserId)
+                .selectCollection(EleUserDTO::getAuthority, t -> t
+                        .result(EleAuthority::getAuthority)
+                )
+                .leftJoin(EleAuthority.class, on -> on
+                        .eq(EleAuthority::getUsername, userName)
+                        .eq(EleAuthority::getUserId, EleUser::getUserId)
+                )
+        );
     }
 
 //    default EleUser getUserByUserId(Long userId){

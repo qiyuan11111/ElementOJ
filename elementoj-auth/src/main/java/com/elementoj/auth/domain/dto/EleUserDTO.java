@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.elementoj.auth.domain.EleAuthority;
 import com.elementoj.common.core.web.domain.BaseEntity;
 import com.github.yulichang.annotation.EntityMapping;
+import com.github.yulichang.annotation.FieldMapping;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,7 +22,7 @@ public class EleUserDTO extends BaseEntity {
 
     private String userId;
 
-    private String userName;
+    private String username;
 
     private String password;
 
@@ -29,5 +30,5 @@ public class EleUserDTO extends BaseEntity {
 
     private String email;
 
-    private List<EleAuthority> authorities;
+    private List<EleAuthority> authority;
 }

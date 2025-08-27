@@ -5,10 +5,17 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 logging:
   level:
     org.springframework.web: DEBUG
     org.springframework.security: TRACE
     org.springframework.security.oauth2: TRACE
+#    org.hibernate.SQL: DEBUG
+    com.service.policy.mapper: DEBUG
+    com.baomidou.example.mapper: DEBUG
+    com.chz.mapper: debug
 
