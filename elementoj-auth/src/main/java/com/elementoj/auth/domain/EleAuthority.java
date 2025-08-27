@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.elementoj.common.core.web.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.security.core.GrantedAuthority;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -23,8 +22,8 @@ public class EleAuthority extends BaseEntity{
     @TableField("user_id")
     private String userId;
 
-    @TableField("user_name")
-    private String userName;
+    @TableField("username")
+    private String username;
 
     @TableField("authority")
     private String authority;

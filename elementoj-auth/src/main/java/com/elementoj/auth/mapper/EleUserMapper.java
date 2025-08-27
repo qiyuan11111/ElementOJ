@@ -2,9 +2,7 @@ package com.elementoj.auth.mapper;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.IdUtil;
-import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.elementoj.auth.domain.EleAuthority;
 import com.elementoj.auth.domain.EleUser;
@@ -13,8 +11,6 @@ import com.github.yulichang.base.MPJBaseMapper;
 import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import lombok.val;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -32,13 +28,13 @@ public interface EleUserMapper extends MPJBaseMapper<EleUser> {
     }
 
     default EleUser getUserNameAndIdByUserId(Long uid) {
-        return getUserByUserId(uid, EleUser::getUserId, EleUser::getUserName);
+        return getUserByUserId(uid, EleUser::getUserId, EleUser::getUsername);
     }
 
     default Long getUserCountByUserName(String userName) {
         return selectCount(
                 new LambdaQueryWrapper<EleUser>()
-                        .eq(EleUser::getUserName, userName)
+                        .eq(EleUser::getUsername, userName)
         );
     }
 
@@ -55,10 +51,10 @@ public interface EleUserMapper extends MPJBaseMapper<EleUser> {
 //            """})
 //    EleUser selectUserDetailsByUserName(@Param("user_name") String userName);
     default EleUserDTO selectUserDetailsByUserName(@Param("user_name") String userName) {
-        return selectJoinOne(EleUserDTO.class, new MPJLambdaWrapper<>(EleUser.class).select(EleUser::getUserName, EleUser::getPassword, EleUser::getUserId)
+        return selectJoinOne(EleUserDTO.class, new MPJLambdaWrapper<>(EleUser.class).select(EleUser::getUsername, EleUser::getPassword, EleUser::getUserId)
                 .innerJoin(EleAuthority.class, on -> {
-                    on.eq(EleAuthority::getUserName, userName);
-                }, EleAuthority::getUserName, EleUser::getUserName));
+                    on.eq(EleAuthority::getUsername, userName);
+                }, EleAuthority::getUsername, EleUser::getUsername));
     }
 
 //    default EleUser getUserByUserId(Long userId){

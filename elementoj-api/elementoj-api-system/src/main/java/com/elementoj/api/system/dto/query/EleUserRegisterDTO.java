@@ -6,7 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 public class EleUserRegisterDTO {
-    private String userName;
+    private String username;
 
     private String password;
 

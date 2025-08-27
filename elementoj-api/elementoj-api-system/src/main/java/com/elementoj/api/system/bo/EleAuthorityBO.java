@@ -13,7 +13,7 @@ public class EleAuthorityBO extends BaseEntity implements GrantedAuthority {
 
     private String userId;
 
-    private String userName;
+    private String username;
 
     private String authority;
 }

@@ -13,14 +13,9 @@ import java.util.List;
 @Data
 public class EleUserBO extends BaseEntity implements UserDetails {
 
-    private String userName;
+    private String username;
 
     private String password;
 
     private List<EleAuthorityBO> authorities;
-
-    @Override
-    public String getUsername() {
-        return userName;
-    }
 }

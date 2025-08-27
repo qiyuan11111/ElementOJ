@@ -7,11 +7,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.elementoj.common.core.web.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -24,8 +19,8 @@ public class EleUser extends BaseEntity {
     @TableField("user_id")
     private String userId;
 
-    @TableField("user_name")
-    private String userName;
+    @TableField("username")
+    private String username;
 
     @TableField("password")
     private String password;
