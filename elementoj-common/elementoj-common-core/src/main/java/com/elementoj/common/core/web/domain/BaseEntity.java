@@ -3,11 +3,13 @@ package com.elementoj.common.core.web.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
 public class BaseEntity implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
     /** 创建者 */
     private String createBy;

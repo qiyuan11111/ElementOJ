@@ -30,5 +30,5 @@ public class EleUserDTO extends BaseEntity {
 
     private String email;
 
-    private List<EleAuthority> authority;
+    private List<EleAuthority> authorities;
 }
