@@ -251,6 +251,7 @@ public class AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository(
             JdbcTemplate jdbcTemplate) {
+
         return new JdbcRegisteredClientRepository(jdbcTemplate);
     }
 

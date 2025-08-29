@@ -11,10 +11,10 @@ spring:
         registration:
           elementoj-gateway:
             provider: elementoj-auth # 引用 provider 的名称
-            client-id: your-client-id
-            client-secret: your-client-secret
+            client-id: elementoj
+            client-secret: elementoj
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            redirect-uri: "https://www.baidu.com"
             scope: openid,profile
         provider:
           elementoj-auth: # 自定义名称，与 registration 中的 provider 对应
