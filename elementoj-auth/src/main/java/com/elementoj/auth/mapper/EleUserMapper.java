@@ -32,8 +32,7 @@ public interface EleUserMapper extends MPJBaseMapper<EleUser> {
     }
 
     default Long getUserCountByUserName(String userName) {
-        return selectCount(
-                new LambdaQueryWrapper<EleUser>()
+        return selectCount(new LambdaQueryWrapper<EleUser>()
                         .eq(EleUser::getUsername, userName)
         );
     }

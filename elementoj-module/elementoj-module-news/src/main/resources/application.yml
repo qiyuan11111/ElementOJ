@@ -9,18 +9,9 @@ spring:
 # application.yml
   security:
     oauth2:
-      client:
-        registration:
-          elementoj-auth:  # 客户端注册名称
-            client-id: web-client
-            client-secret: your-secret
-            authorization-grant-type: authorization_code
-            redirect-uri: https://myapp.com/login/oauth2/code/elementoj
-            scope: openid,profile,email
-
-        provider:
-          elementoj:
-            issuer-uri: http://localhost:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://elementoj-auth
 
 logging:
   level:

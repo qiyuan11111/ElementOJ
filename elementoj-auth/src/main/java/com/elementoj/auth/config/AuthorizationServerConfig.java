@@ -2,6 +2,12 @@ package com.elementoj.auth.config;
 
 // 导入nimbus-jose-jwt库中的JWK相关类，用于JWT签名验证
 
+import com.alibaba.druid.support.spring.DruidLobHandler;
+import com.elementoj.api.system.bo.EleAuthorityBO;
+import com.elementoj.api.system.bo.EleUserBO;
+import com.elementoj.auth.domain.SecurityUserMixin;
+import com.fasterxml.jackson.databind.Module;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
@@ -20,21 +26,18 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.core.AuthorizationGrantType;
-import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
+import org.springframework.security.jackson2.SecurityJackson2Modules;
 import org.springframework.security.oauth2.core.OAuth2Token;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.authorization.JdbcOAuth2AuthorizationService;
 import org.springframework.security.oauth2.server.authorization.client.JdbcRegisteredClientRepository;
-import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
+import org.springframework.security.oauth2.server.authorization.jackson2.OAuth2AuthorizationServerJackson2Module;
 import org.springframework.security.oauth2.server.authorization.settings.AuthorizationServerSettings;
-import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
-import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 import org.springframework.security.oauth2.server.authorization.token.*;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
@@ -44,7 +47,7 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.time.Duration;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -114,6 +117,7 @@ public class AuthorizationServerConfig {
                 )
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/register", "/error", "/login").permitAll()
+                        .requestMatchers("/.well-known/**", "/**.ico").permitAll() // 放行 .json 和 .ico
                         .anyRequest().authenticated()
                 );
                 // 启用纯安全过滤器登录页（不经过MVC）
@@ -194,13 +198,29 @@ public class AuthorizationServerConfig {
     public JdbcOAuth2AuthorizationService authorizationService(
             JdbcTemplate jdbcTemplate,
             RegisteredClientRepository registeredClientRepository) {
+        JdbcOAuth2AuthorizationService jdbcOAuth2AuthorizationService = new JdbcOAuth2AuthorizationService(jdbcTemplate, registeredClientRepository);
+        JdbcOAuth2AuthorizationService.OAuth2AuthorizationRowMapper authorizationRowMapper
+                = new JdbcOAuth2AuthorizationService.OAuth2AuthorizationRowMapper(registeredClientRepository);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = JdbcOAuth2AuthorizationService.class.getClassLoader();
+        List<Module> securityModules = SecurityJackson2Modules.getModules(classLoader);
+        objectMapper.registerModules(securityModules);
+        objectMapper.registerModule(new OAuth2AuthorizationServerJackson2Module());
+        objectMapper.addMixIn(EleUserBO.class, SecurityUserMixin.class); //只有这一行是关键配置，其它都是为了还原JdbcOAuth2AuthorizationService默认配置
+        objectMapper.addMixIn(EleAuthorityBO.class, SecurityUserMixin.class);
+
+        authorizationRowMapper.setObjectMapper(objectMapper);
+        authorizationRowMapper.setLobHandler(new DruidLobHandler());
+        jdbcOAuth2AuthorizationService.setAuthorizationRowMapper(authorizationRowMapper);
+        return jdbcOAuth2AuthorizationService;
         // 创建基于JDBC的OAuth2授权服务实例
         // 当用户授权后，授权信息（如授权码、访问令牌等）会被存储到数据库中
         // 这样在分布式环境下，多个授权服务器实例可以共享授权信息
-        return new JdbcOAuth2AuthorizationService(
-                jdbcTemplate,
-                registeredClientRepository
-        );
+//        return new JdbcOAuth2AuthorizationService(
+//                jdbcTemplate,
+//                registeredClientRepository
+//        );
     }
 
     /**

@@ -2,11 +2,16 @@ package com.elementoj.auth.controller;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.db.Session;
+import com.elementoj.api.system.bo.EleUserBO;
 import com.elementoj.api.system.dto.query.EleUserRegisterDTO;
 import com.elementoj.api.system.exception.EleUserException;
 import com.elementoj.auth.mapbean.EleUserMapBean;
 import com.elementoj.auth.service.impl.EleUserService;
 import com.elementoj.common.core.web.domain.AjaxResult;
+import jakarta.servlet.http.HttpSession;
+import org.apache.catalina.manager.util.SessionUtils;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,11 +40,25 @@ public class EleUserController {
             throw new EleUserException("两次密码不一致", ELE_USER_INCONSISTENT_PASSWORDS);
 
         eleUserService.register(eleUserMapBean.toEleUserBO(eleUserRegisterDTO));
+        new EleUserBO();
         return AjaxResult.success();
     }
 
     @GetMapping("/login-view")  // 与SecurityConfig中配置的登录页面路径保持一致
-    public String login() {
+    public String login(String authToken, Authentication authentication) {
+        // 已登录用户重定向到首页
+        if (authentication != null && authentication.isAuthenticated()) {
+            return "redirect:/";
+        }
+        // 验证 authToken
+//        String sessionToken = (String) session.getAttribute("authToken");
+//        System.out.println(sessionToken);
+//        System.out.println(authToken);
+//        if (StrUtil.isBlank(sessionToken) || !StrUtil.equals(sessionToken, authToken)) {
+//            return "redirect:/error?message=Invalid+or+missing+auth+token";
+//        }
+        // 清理 session 中的 token（一次性使用）
+//        session.removeAttribute("authToken");
         return "login-view";  // 确保与实际模板文件名一致
     }
 

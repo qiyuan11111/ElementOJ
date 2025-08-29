@@ -9,8 +9,8 @@ import java.util.Date;
 
 public class BaseEntity implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+//    @Serial
+
     /** 创建者 */
     private String createBy;
 

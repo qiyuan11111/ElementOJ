@@ -5,6 +5,10 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://elementoj-auth
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
