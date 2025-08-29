@@ -8,8 +8,6 @@ spring:
         file-extension: yaml
         group: DEFAULT_GROUP
         namespace: 1110ffde-180c-4468-b9ef-e743393d6f94
-    gateway:
-      server:
 
   config:
     import:

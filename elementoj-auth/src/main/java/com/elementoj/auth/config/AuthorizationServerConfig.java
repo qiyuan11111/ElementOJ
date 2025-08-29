@@ -61,7 +61,6 @@ import java.util.UUID;
  * 5. 授权信息存储
  */
 @Configuration
-@EnableWebSecurity
 public class AuthorizationServerConfig {
 
     /**

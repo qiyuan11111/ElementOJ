@@ -5,6 +5,23 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+  security:
+    oauth2:
+      client:
+        registration:
+          elementoj-gateway:
+            provider: elementoj-auth # 引用 provider 的名称
+            client-id: your-client-id
+            client-secret: your-client-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid,profile
+        provider:
+          elementoj-auth: # 自定义名称，与 registration 中的 provider 对应
+            authorization-uri: https://elementoj-auth/oauth2/authorize
+            token-uri: https://elementoj-auth/oauth2/token
+            user-info-uri: https://elementoj-auth/userinfo
+            user-name-attribute: userId
 
 logging:
   level:
