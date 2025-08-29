@@ -20,7 +20,6 @@
         <module>elementoj-api</module>
         <module>elementoj-common</module>
         <module>elementoj-module</module>
-        <module>elementoj</module>
         <module>elementoj-gateway</module>
     </modules>
 

@@ -1,0 +1,13 @@
+server:
+  port: 8401
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: elementoj-gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        namespace: 1110ffde-180c-4468-b9ef-e743393d6f94
+    gateway:
+      routes:
+        - id: resource-server
+          uri: https://your-resource-server.com
+          predicates:
+            - Path=/api/**
+          filters:
+            - TokenRelay=true # 启用令牌转发
+  config:
+    import:
+#      - nacos:common-mysql.yml?group=DATABASE&refreshEnabled=true
+      - nacos:common-security.yml?group=SECURITY&refreshEnabled=true
