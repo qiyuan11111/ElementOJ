@@ -14,10 +14,11 @@ public class GatewayConfig {
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("elementoj-auth", r -> r
-                        .alwaysTrue()
+                        .path("/auth/**")
                         .filters(f -> f
+                                .stripPrefix(1)
                                 .tokenRelay() // Enable TokenRelay filter
-                                .removeRequestHeader("Cookie") // Remove Cookie header
+//                                .removeRequestHeader("Cookie") // Remove Cookie header
                         )
                         .uri("lb://elementoj-auth")
                 )

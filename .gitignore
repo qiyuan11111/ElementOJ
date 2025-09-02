@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 nacos-server-3.0.3/
+Redis-8.2.0-Windows-x64-cygwin-with-Service/

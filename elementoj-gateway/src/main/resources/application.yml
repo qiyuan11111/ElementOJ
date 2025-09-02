@@ -1,6 +1,10 @@
 server:
-  port: 8401
+  port: 8501
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
   cloud:
     nacos:
       discovery:
@@ -12,7 +16,7 @@ spring:
           elementoj-gateway:
             provider: elementoj-auth # 引用 provider 的名称
             client-id: elementoj
-            client-secret: elementoj
+            client-secret: elementoj1
             authorization-grant-type: authorization_code
             redirect-uri: "https://www.baidu.com"
             scope: openid,profile
@@ -22,6 +26,7 @@ spring:
             token-uri: https://elementoj-auth/oauth2/token
             user-info-uri: https://elementoj-auth/userinfo
             user-name-attribute: userId
+
 
 logging:
   level:
