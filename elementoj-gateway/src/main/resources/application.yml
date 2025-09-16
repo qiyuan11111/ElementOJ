@@ -12,6 +12,7 @@ spring:
   security:
     oauth2:
       client:
+        default-registration: elementoj-gateway
         registration:
           elementoj-gateway:
             provider: elementoj-auth # 引用 provider 的名称
@@ -19,12 +20,12 @@ spring:
             client-secret: elementoj1
             authorization-grant-type: authorization_code
             redirect-uri: "https://www.baidu.com"
-            scope: openid,profile
+            scope: all
         provider:
           elementoj-auth: # 自定义名称，与 registration 中的 provider 对应
-            authorization-uri: https://elementoj-auth/oauth2/authorize
-            token-uri: https://elementoj-auth/oauth2/token
-            user-info-uri: https://elementoj-auth/userinfo
+            authorization-uri: http://elementoj-auth:8301/oauth2/authorize
+            token-uri: http://elementoj-auth:8301/oauth2/token
+            user-info-uri: http://elementoj-auth:8301/userinfo
             user-name-attribute: userId
 
 

@@ -24,6 +24,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.jackson2.SecurityJackson2Modules;
@@ -103,28 +104,6 @@ public class AuthorizationServerConfig {
         };
     }
 
-    //
-    @Bean
-    @Order(Ordered.HIGHEST_PRECEDENCE + 1) // 较低优先级
-    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)  // 在这里禁用CSRF
-                .formLogin(login -> login
-                                .loginPage("/login-view")   // 指定登录页面URL
-                                .loginProcessingUrl("/login")
-                                .permitAll()
-                )
-                .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/register", "/error", "/login").permitAll()
-                        .requestMatchers("/.well-known/**", "/**.ico").permitAll() // 放行 .json 和 .ico
-                        .anyRequest().authenticated()
-                );
-                // 启用纯安全过滤器登录页（不经过MVC）
-
-
-        return http.build();
-    }
-
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public SecurityFilterChain authorizationServerSecurityFilterChain(
@@ -140,6 +119,7 @@ public class AuthorizationServerConfig {
                 .getEndpointsMatcher();
         // 配置HTTP安全策略
         http
+
                 .securityMatcher(endpointsMatcher)
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().authenticated()

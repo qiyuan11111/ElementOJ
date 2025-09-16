@@ -11,7 +11,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://elementoj-auth
+          issuer-uri: http://elementoj-auth:8301
 
 logging:
   level:

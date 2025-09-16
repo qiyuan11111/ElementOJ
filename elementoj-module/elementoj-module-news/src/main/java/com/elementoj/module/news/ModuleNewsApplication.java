@@ -11,7 +11,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
         @MapperScan("com.elementoj.**.mapbean")
 })
 @SpringBootApplication
-@EnableDiscoveryClient
 public class ModuleNewsApplication {
     public static void main(String[] args) {
         SpringApplication.run(ModuleNewsApplication.class, args);
