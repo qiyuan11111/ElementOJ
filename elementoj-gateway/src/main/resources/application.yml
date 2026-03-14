@@ -17,9 +17,10 @@ spring:
           elementoj-gateway:
             provider: elementoj-auth # 引用 provider 的名称
             client-id: elementoj
-            client-secret: elementoj1
+            client-secret: elementoj
             authorization-grant-type: authorization_code
-            redirect-uri: "https://www.baidu.com"
+#            redirect-uri: "http://elementoj-gateway:8501/login/callback"
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             scope: all
         provider:
           elementoj-auth: # 自定义名称，与 registration 中的 provider 对应
@@ -34,3 +35,4 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.security: TRACE
     org.springframework.security.oauth2: TRACE
+    springframework.web.reactive.function.client: TRACE

@@ -26,14 +26,18 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.jackson2.SecurityJackson2Modules;
+import org.springframework.security.oauth2.core.AuthorizationGrantType;
+import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.core.OAuth2Token;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.authorization.JdbcOAuth2AuthorizationService;
 import org.springframework.security.oauth2.server.authorization.client.JdbcRegisteredClientRepository;
+import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
@@ -137,8 +141,8 @@ public class AuthorizationServerConfig {
                 .with(authorizationServerConfigurer, Customizer.withDefaults());
 
         authorizationServerConfigurer
-                .tokenGenerator(tokenGenerator)
-                .oidc(Customizer.withDefaults());    // Enable OpenID Connect 1.0
+                .tokenGenerator(tokenGenerator);
+//                .oidc(Customizer.withDefaults());    // Enable OpenID Connect 1.0
 
         return http.build();
     }
@@ -234,6 +238,37 @@ public class AuthorizationServerConfig {
 
         return new JdbcRegisteredClientRepository(jdbcTemplate);
     }
+
+//    @Bean
+//    public RegisteredClientRepository registeredClientRepository(JdbcTemplate jdbcTemplate) {
+//        JdbcRegisteredClientRepository repository = new JdbcRegisteredClientRepository(jdbcTemplate);
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//
+//        // ✅ 检查是否已存在名为 "elementoj" 的客户端
+//        String clientId = "elementoj";
+//        RegisteredClient existingClient = repository.findByClientId(clientId);
+//
+//        if (existingClient == null) {
+//            // ✅ 创建并注册客户端
+//            RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
+//                    .clientId(clientId)
+//                    .clientSecret(passwordEncoder.encode("elementoj"))  // 自定义密钥
+//                    .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+//                    .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+//                    .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+//                    .redirectUri("http://elementoj-gateway:8501/login/callback")  // ✅ 使用你的 redirect-uri
+//                    .scope("all")
+//                    .clientName("elementoj")
+//                    .build();
+//
+//            repository.save(registeredClient);
+//            System.out.println("✅ Registered new OAuth2 client: " + clientId);
+//        } else {
+//            System.out.println("✅ OAuth2 client '" + clientId + "' already registered.");
+//        }
+//
+//        return repository;
+//    }
 
     /**
      * 配置 JWK (JSON Web Key) 源

@@ -21,6 +21,7 @@
         <module>elementoj-common</module>
         <module>elementoj-module</module>
         <module>elementoj-gateway</module>
+        <module>elementoj-common/elementoj-common-redis</module>
     </modules>
 
     <dependencyManagement>

@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.elementoj.api.system.exception.EleUserExceptionCode.ELE_USER_INCONSISTENT_PASSWORDS;
 import static com.elementoj.api.system.exception.EleUserExceptionCode.ELE_USER_NOT_EXIST_USER;
 
-@RestController("/new")
+@RestController("/news")
 public class EleTestController {
     @PostMapping("/test")
 //    @SentinelResource(value = "register", fallback = "registerFallback", fallbackClass = EleUserControllerFallback.class)
     public AjaxResult register() {
-        return AjaxResult.success();
+        return AjaxResult.success("testest");
     }
 }

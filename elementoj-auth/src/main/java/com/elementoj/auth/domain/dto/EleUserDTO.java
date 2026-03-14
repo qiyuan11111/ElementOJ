@@ -24,4 +24,6 @@ public class EleUserDTO extends BaseEntity {
     private String email;
 
     private List<EleAuthority> authorities;
+
+    // news 、 problem 、solution 、 context 、 group
 }
